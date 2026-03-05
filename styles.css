@@ -13,43 +13,47 @@ body {
   place-items: center;
   font-family: Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at 20% 20%, rgba(196, 30, 58, 0.3) 0%, rgba(196, 30, 58, 0) 45%),
-    radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.12) 0%, rgba(255, 215, 0, 0) 40%),
-    linear-gradient(145deg, #050505 0%, #101318 45%, #1a0b12 100%);
+    linear-gradient(rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.55)),
+    url("james bond background.jpg") center / cover no-repeat;
 }
 
 .card {
-  width: min(90vw, 420px);
-  padding: 2.25rem 2rem;
+  width: min(74vmin, 560px);
+  aspect-ratio: 1 / 1;
+  padding: clamp(1.2rem, 3.2vmin, 2rem);
   text-align: center;
-  background: rgba(20, 22, 28, 0.82);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  background: rgba(20, 22, 28, 0.72);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 215, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   margin: 0 0 0.35rem;
   color: #f6f1d5;
-  font-size: clamp(1.85rem, 4.6vw, 2.2rem);
+  font-size: clamp(1.2rem, 3.3vw, 1.6rem);
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
 p {
-  margin: 0 0 1.4rem;
+  margin: 0 0 1rem;
   color: #d3d8e2;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .profile-photo {
-  width: 170px;
-  height: 170px;
+  width: clamp(104px, 20vmin, 142px);
+  height: clamp(104px, 20vmin, 142px);
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1rem;
   border: 4px solid #d5a743;
   box-shadow: 0 0 0 3px rgba(213, 167, 67, 0.2), 0 12px 24px rgba(0, 0, 0, 0.45);
 }
@@ -58,17 +62,20 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
+  width: min(74%, 250px);
 }
 
 .contact-btn,
-.about-btn {
+.about-btn,
+.shoot-btn {
   border: none;
   border-radius: 999px;
-  padding: 0.75rem 1.5rem;
+  padding: 0.62rem 1rem;
+  width: 100%;
   background: linear-gradient(180deg, #f6d77d 0%, #d5a743 100%);
   color: #1b1305;
-  font-size: 1rem;
+  font-size: 0.92rem;
   cursor: pointer;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -81,4 +88,150 @@ p {
 
 .about-btn:hover {
   background: linear-gradient(180deg, #ffe39b 0%, #e0b452 100%);
+}
+
+.shoot-btn:hover {
+  background: linear-gradient(180deg, #ffe39b 0%, #e0b452 100%);
+}
+
+.red-wipe {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(0);
+}
+
+.red-wipe::before,
+.red-wipe::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+}
+
+.red-wipe::before {
+  top: -136%;
+  left: -12%;
+  width: 124%;
+  height: 194%;
+  background:
+    radial-gradient(420px 250px at 7% 12%, rgba(56, 0, 0, 0.98) 58%, rgba(56, 0, 0, 0) 60%),
+    radial-gradient(470px 285px at 27% 10%, rgba(68, 0, 0, 0.98) 58%, rgba(68, 0, 0, 0) 60%),
+    radial-gradient(410px 250px at 47% 14%, rgba(64, 0, 0, 0.98) 58%, rgba(64, 0, 0, 0) 60%),
+    radial-gradient(520px 300px at 70% 9%, rgba(74, 0, 0, 0.97) 58%, rgba(74, 0, 0, 0) 60%),
+    radial-gradient(410px 250px at 91% 13%, rgba(66, 0, 0, 0.97) 58%, rgba(66, 0, 0, 0) 60%),
+    linear-gradient(180deg, rgba(42, 0, 0, 1) 0%, rgba(78, 0, 0, 0.98) 66%, rgba(120, 0, 0, 0) 100%);
+  filter: blur(1.7px) saturate(116%);
+}
+
+.red-wipe::after {
+  top: -128%;
+  left: -10%;
+  width: 122%;
+  height: 154%;
+  background:
+    radial-gradient(330px 190px at 8% 16%, rgba(88, 0, 0, 0.99) 54%, rgba(88, 0, 0, 0) 56%),
+    radial-gradient(380px 220px at 26% 17%, rgba(102, 0, 0, 0.98) 54%, rgba(102, 0, 0, 0) 56%),
+    radial-gradient(330px 185px at 44% 14%, rgba(82, 0, 0, 0.99) 54%, rgba(82, 0, 0, 0) 56%),
+    radial-gradient(420px 250px at 65% 18%, rgba(108, 0, 0, 0.98) 54%, rgba(108, 0, 0, 0) 56%),
+    radial-gradient(350px 200px at 86% 16%, rgba(92, 0, 0, 0.98) 54%, rgba(92, 0, 0, 0) 56%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 212, 212, 0) 0 11%,
+      rgba(255, 212, 212, 0.12) 11% 15%,
+      rgba(255, 135, 135, 0) 15% 19%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(60, 0, 0, 1) 0%,
+      rgba(94, 0, 0, 0.99) 58%,
+      rgba(130, 0, 0, 0.92) 84%,
+      rgba(168, 0, 0, 0) 100%
+    );
+  clip-path: polygon(
+    0% 0%, 6% 7.2%, 13% 2.8%, 21% 9.2%, 30% 3.3%, 39% 10.4%, 48% 4%,
+    57% 10.9%, 67% 4.2%, 76% 9.8%, 85% 3.5%, 93% 8.4%, 100% 0%,
+    100% 100%, 0% 100%
+  );
+  filter: blur(0.65px) saturate(120%) contrast(126%);
+}
+
+.red-wipe--active {
+  animation: red-wipe-flow 6.4s linear forwards;
+}
+
+.red-wipe--active::before {
+  animation: paint-under-fall 6.4s cubic-bezier(0.2, 0.7, 0.28, 1) forwards;
+}
+
+.red-wipe--active::after {
+  animation: paint-sheet-fall 6.4s cubic-bezier(0.2, 0.7, 0.28, 1) forwards;
+}
+
+@keyframes red-wipe-flow {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes paint-under-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(0%) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(4%) scaleY(1.06);
+  }
+  46% {
+    opacity: 1;
+    transform: translateY(28%) scaleY(1.24);
+  }
+  74% {
+    opacity: 1;
+    transform: translateY(72%) scaleY(1.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(118%) scaleY(1.56);
+  }
+}
+
+@keyframes paint-sheet-fall {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+    background-position: 0 -24%, 0 -24%, 0 -24%, 0 -24%, 0 -24%, 0 -28%, 0 -30%;
+  }
+  18% {
+    opacity: 0.96;
+    transform: translateY(9%);
+    background-position: 0 -2%, 0 -1%, 0 0%, 0 -2%, 0 -1%, 0 0%, 0 1%;
+  }
+  44% {
+    opacity: 1;
+    transform: translateY(30%);
+    background-position: 0 14%, 0 18%, 0 20%, 0 14%, 0 17%, 0 24%, 0 28%;
+  }
+  76% {
+    opacity: 1;
+    transform: translateY(76%);
+    background-position: 0 30%, 0 35%, 0 38%, 0 30%, 0 34%, 0 52%, 0 59%;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(112%);
+    background-position: 0 48%, 0 55%, 0 58%, 0 48%, 0 53%, 0 76%, 0 84%;
+  }
 }

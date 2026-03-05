@@ -16,7 +16,25 @@
       <div class="button-stack">
         <button type="button" class="contact-btn">Contact Me</button>
         <button type="button" class="about-btn">About Me</button>
+        <button type="button" class="shoot-btn">Shoot</button>
       </div>
     </main>
+
+    <div class="red-wipe" id="red-wipe" aria-hidden="true"></div>
+
+    <script>
+      const shootButton = document.querySelector(".shoot-btn");
+      const redWipe = document.getElementById("red-wipe");
+
+      shootButton?.addEventListener("click", () => {
+        redWipe.classList.remove("red-wipe--active");
+        void redWipe.offsetWidth;
+        redWipe.classList.add("red-wipe--active");
+      });
+
+      redWipe?.addEventListener("animationend", () => {
+        redWipe.classList.remove("red-wipe--active");
+      });
+    </script>
   </body>
 </html>
