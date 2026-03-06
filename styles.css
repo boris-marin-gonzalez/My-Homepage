@@ -11,10 +11,53 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   background:
     linear-gradient(rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.55)),
     url("james bond background.jpg") center / cover no-repeat;
+}
+
+.villains-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.villain {
+  position: absolute;
+  width: clamp(120px, 19vw, 280px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0.5;
+  filter: grayscale(25%) contrast(110%) brightness(78%);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+}
+
+.villain-1 {
+  top: 7%;
+  left: 4%;
+  transform: rotate(-8deg);
+}
+
+.villain-2 {
+  top: 8%;
+  right: 4%;
+  transform: rotate(8deg);
+}
+
+.villain-3 {
+  bottom: 7%;
+  left: 5%;
+  transform: rotate(7deg);
+}
+
+.villain-4 {
+  bottom: 7%;
+  right: 5%;
+  transform: rotate(-7deg);
 }
 
 .card {
@@ -29,6 +72,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
